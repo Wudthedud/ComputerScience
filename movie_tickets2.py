@@ -30,10 +30,6 @@ while ticket_wanted == "Y":
 
     ticket_wanted = input("Do you want to sell another ticket? (Y/N)").upper()
 
-    elif ticket_wanted == "N":
-        ticket_wanted = False
-    else:
-        print("Please enter (Y/N)")
 
 # Main Routine
 sell_ticket()

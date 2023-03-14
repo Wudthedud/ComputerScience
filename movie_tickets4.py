@@ -25,8 +25,6 @@ def confirm_order(ticket, number, cost):
             print("Please choose (Y/N)")
 
 
-
-
 # Component 1 - Welcome screen and set up variables
 def sell_ticket():
     print("********** Fanfare Movies - Ticketing System **********\n")
@@ -58,8 +56,6 @@ while ticket_wanted == "Y":
             print("Order Confirmed")
         else:
             print("Order Cancelled")
-
-        total = total + cost
 
     ticket_wanted = input("Do you want to sell another ticket? (Y/N) \n").upper()
 
