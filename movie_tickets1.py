@@ -2,6 +2,7 @@
 Welcome screen and variables
 Create by Daniel Wu"""
 
+
 # Component 1 - Welcome screen and set up variables
 def sell_ticket():
     print("********** Fanfare Movies - Ticketing System **********\n")
@@ -12,5 +13,7 @@ def sell_ticket():
     tickets_sold = 0
     total_sales = 0
 
+
 # Main Routine
 sell_ticket()
+
