@@ -20,11 +20,11 @@ def get_price(type_):
 
 
 # Component 4
-def confirm_order(ticket, number, cost):
+def confirm_order(ticket, number, cost_):
     confirm = ""
     while confirm != "Y" and confirm != "N":
         confirm = input(
-            f"\nYou have ordered {num_tickets} {ticket_type} ticket(s) at a cost of ${cost * num_tickets:.2f}!\n"
+            f"\nYou have ordered {num_tickets} {ticket_type} ticket(s) at a cost of ${cost_ * num_tickets:.2f}!\n"
             f"Confirm? (Y/N) \n>>").upper()
         if confirm == "Y":
             return True
