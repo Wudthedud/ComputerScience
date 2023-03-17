@@ -1,6 +1,14 @@
-"""Movie Theatre Ticketing System - Version 4
-Calculate Ticket Price
+"""Movie Theatre Ticketing System - Version 5
+Update Totals
 Create by Daniel Wu"""
+
+
+adult_tickets = 0
+child_tickets = 0
+student_tickets = 0
+gift_vouchers = 0
+tickets_sold = 0
+total_sales = 0
 
 
 # Component 3
@@ -15,8 +23,9 @@ def get_price(type_):
 def confirm_order(ticket, number, cost):
     confirm = ""
     while confirm != "Y" and confirm != "N":
-        confirm = input(f"\nYou have ordered {num_tickets} {ticket_type} ticket(s) at a cost of ${cost * num_tickets:.2f}!\n"
-                        f"Confirm? (Y/N) \n>>").upper()
+        confirm = input(
+            f"\nYou have ordered {num_tickets} {ticket_type} ticket(s) at a cost of ${cost * num_tickets:.2f}!\n"
+            f"Confirm? (Y/N) \n>>").upper()
         if confirm == "Y":
             return True
         elif confirm == "N":
@@ -27,13 +36,14 @@ def confirm_order(ticket, number, cost):
 
 # Component 1 - Welcome screen and set up variables
 def sell_ticket():
-    print("********** Fanfare Movies - Ticketing System **********\n")
-    adult_tickets = 0
-    child_tickets = 0
-    student_tickets = 0
-    gift_vouchers = 0
-    tickets_sold = 0
-    total_sales = 0
+    print(f"********** Fanfare Movies - Ticketing System **********\n"
+          f"\t Adult Tickets Sold: {adult_tickets}\n"
+          f"\t Student Tickets Sold: {student_tickets}\n"
+          f"\t Child Tickets Sold: {child_tickets}\n "
+          f"\t Gift Vouchers Used: {gift_vouchers}\n"
+          "******************\033[1m Totals \033[0m ******************\n"
+          f"\t Total Tickets Sold: {tickets_sold}\n"
+          f"\t Total Sales: {total_sales}\n")
 
 
 # Component 2
@@ -54,11 +64,20 @@ while ticket_wanted == "Y":
         cost = get_price(ticket_type)
         if confirm_order(ticket_type, num_tickets, cost):
             print("Order Confirmed")
+            total_sales += cost
+            tickets_sold += num_tickets
+            if ticket_type == "A":
+                adult_tickets += num_tickets
+            elif ticket_type == "S":
+                student_tickets += num_tickets
+            elif ticket_type == "C":
+                child_tickets += num_tickets
+            elif ticket_type == "G":
+                gift_vouchers += num_tickets
         else:
             print("Order Cancelled")
 
     ticket_wanted = input("Do you want to sell another ticket? (Y/N) \n").upper()
-
 
 # Main Routine
 sell_ticket()
