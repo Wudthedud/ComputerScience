@@ -1,7 +1,6 @@
-"""Movie Theatre Ticketing System - Version 5
-Bug Fixing
-Create by Daniel Wu"""
-
+"""Movie Theatre Ticketing System - Version 6
+Final Version
+Created by Daniel Wu"""
 
 adult_tickets = 0
 child_tickets = 0
@@ -24,7 +23,7 @@ def confirm_order(ticket, number, cost_):
     confirm = ""
     while confirm != "Y" and confirm != "N":
         confirm = input(
-            f"\nYou have ordered {num_tickets} {ticket_type} ticket(s) at a cost of ${cost_ * num_tickets:.2f}!\n"
+            f"\nYou have ordered {number} {ticket} ticket(s) at a cost of ${cost_:.2f}!\n"
             f"Confirm? (Y/N) \n>>").upper()
         if confirm == "Y":
             return True
@@ -43,12 +42,12 @@ def sell_ticket():
           f"\t Gift Vouchers Used: {gift_vouchers}\n"
           "*******************\033[1m Totals \033[0m******************\n"
           f"\t Total Tickets Sold: {tickets_sold}\n"
-          f"\t Total Sales: ${cost * num_tickets:.2f}\n")
+          f"\t Total Sales: ${total_sales:.2f}\n")
 
 
 # Component 2
 ticket_wanted = "Y"
-total = float(0)
+total = float("0")
 while ticket_wanted == "Y":
     ticket_type = input("What kind of ticket do you want: \n"
                         "\t 'A' - Adult Ticket \n"
@@ -57,9 +56,8 @@ while ticket_wanted == "Y":
                         "\t 'G' - Gift Voucher \n"
                         ">> ").upper()
     if ticket_type in ["A", "S", "C", "G"]:
-
         num_tickets = int(input(f"How many {ticket_type} tickets do you want? \n "))
-        cost = get_price(ticket_type)
+        cost = get_price(ticket_type) * num_tickets
         if confirm_order(ticket_type, num_tickets, cost):
             print("Order Confirmed")
             total_sales += cost
@@ -77,7 +75,6 @@ while ticket_wanted == "Y":
         ticket_wanted = input("Do you want to sell another ticket? (Y/N) \n").upper()
     else:
         print("Invalid input. Please enter 'A', 'S', 'C', or 'G'.")
-
 
 # Main Routine
 sell_ticket()

@@ -1,6 +1,6 @@
 """Movie Theatre Ticketing System - Version 5
 Update Totals
-Create by Daniel Wu"""
+Created by Daniel Wu"""
 
 
 adult_tickets = 0

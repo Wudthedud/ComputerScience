@@ -1,6 +1,6 @@
 """Movie Theatre Ticketing System - Version 3
 Calculate Ticket Price
-Create by Daniel Wu"""
+Created by Daniel Wu"""
 
 # Component 3
 def get_price(type_):

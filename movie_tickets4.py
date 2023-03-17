@@ -1,6 +1,6 @@
 """Movie Theatre Ticketing System - Version 4
 Calculate Ticket Price
-Create by Daniel Wu"""
+Created by Daniel Wu"""
 
 
 # Component 3

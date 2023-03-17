@@ -1,6 +1,6 @@
 """Movie Theatre Ticketing System - Version 1
 Welcome screen and variables
-Create by Daniel Wu"""
+Created by Daniel Wu"""
 
 
 # Component 1 - Welcome screen and set up variables

@@ -1,6 +1,6 @@
 """Movie Theatre Ticketing System - Version 2
 Category and number of ticket required
-Create by Daniel Wu"""
+Created by Daniel Wu"""
 
 
 # Component 1 - Welcome screen and set up variables
