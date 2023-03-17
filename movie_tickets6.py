@@ -36,14 +36,14 @@ def confirm_order(ticket, number, cost):
 
 # Component 1 - Welcome screen and set up variables
 def sell_ticket():
-    print(f"********** Fanfare Movies - Ticketing System **********\n"
+    print(f"************* Ticketing System **************\n"
           f"\t Adult Tickets Sold: {adult_tickets}\n"
           f"\t Student Tickets Sold: {student_tickets}\n"
           f"\t Child Tickets Sold: {child_tickets}\n "
           f"\t Gift Vouchers Used: {gift_vouchers}\n"
-          "******************\033[1m Totals \033[0m ******************\n"
+          "*******************\033[1m Totals \033[0m******************\n"
           f"\t Total Tickets Sold: {tickets_sold}\n"
-          f"\t Total Sales: {total_sales}\n")
+          f"\t Total Sales: ${cost * num_tickets:.2f}\n")
 
 
 # Component 2
@@ -77,7 +77,6 @@ while ticket_wanted == "Y":
         ticket_wanted = input("Do you want to sell another ticket? (Y/N) \n").upper()
     else:
         print("Invalid input. Please enter 'A', 'S', 'C', or 'G'.")
-
 
 
 # Main Routine
